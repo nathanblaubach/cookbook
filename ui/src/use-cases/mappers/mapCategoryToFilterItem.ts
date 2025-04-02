@@ -1,4 +1,4 @@
-import {FilterItem} from "../../../../components/Filter/Filter.tsx";
+import {FilterItem} from "../../components/Filter/Filter.tsx";
 
 export function mapCategoryToFilterItem(category: string): FilterItem {
     return {

@@ -1,14 +1,14 @@
 import {describe, expect, it} from 'vitest';
-import {JsonRecipeRepository} from './adapters/repository/json-recipe-repository.ts';
-import {RecipeUseCases} from './recipe-use-cases';
-import {FilterItem} from '../../components/Filter/Filter';
-import {FakeJsonRecipeReader} from '../../infrastructure/fake-json-recipe-reader.ts';
+import {RecipeUseCases} from './recipe-use-cases.ts';
+import {FilterItem} from '../components/Filter/Filter.tsx';
+import {FakeRecipeReader} from '../infrastructure/fake-recipe-reader.ts';
+import {RecipeRepository} from '../repositories/recipe-repository.ts';
 
 describe('RecipeUseCases', () => {
 
-    const fakeJsonRecipeReader = new FakeJsonRecipeReader();
-    const jsonRecipeRepository = new JsonRecipeRepository(fakeJsonRecipeReader);
-    const recipeUseCases: RecipeUseCases = new RecipeUseCases(jsonRecipeRepository);
+    const fakeRecipeReader = new FakeRecipeReader();
+    const recipeRepository = new RecipeRepository(fakeRecipeReader);
+    const recipeUseCases: RecipeUseCases = new RecipeUseCases(recipeRepository);
 
     const uncheckedCategoryFilters: FilterItem[] = [
         {
@@ -38,7 +38,7 @@ describe('RecipeUseCases', () => {
             const recipeCards = recipeUseCases.getRecipeCards(searchTerm, uncheckedCategoryFilters);
 
             // Assert
-            expect(recipeCards.length).toBe(fakeJsonRecipeReader.read().length);
+            expect(recipeCards.length).toBe(fakeRecipeReader.readRecipes().length);
         });
 
         it('should limit recipes by checked categories', () => {
@@ -66,7 +66,7 @@ describe('RecipeUseCases', () => {
             const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
 
             // Assert
-            expect(recipeCards.map(recipeCard => recipeCard.id)).toEqual([1, 2, 5]);
+            expect(recipeCards.map(recipeCard => recipeCard.recipeId)).toEqual([1, 2, 5]);
         });
 
         const chocolateIngredientRecipeId = 1;
@@ -80,12 +80,12 @@ describe('RecipeUseCases', () => {
             const recipeCards = recipeUseCases.getRecipeCards(searchTerm, uncheckedCategoryFilters);
 
             // Assert: Ingredients that match the search term are not displayed
-            const chocolateIngredientRecipeCard = recipeCards.find(recipeCard => recipeCard.id === chocolateIngredientRecipeId);
+            const chocolateIngredientRecipeCard = recipeCards.find(recipeCard => recipeCard.recipeId === chocolateIngredientRecipeId);
             expect(chocolateIngredientRecipeCard).not.toBeUndefined();
-            expect(chocolateIngredientRecipeCard!.contentLines.length).toBe(0);
+            expect(chocolateIngredientRecipeCard!.relevantIngredients.length).toBe(0);
 
             // Assert: Recipes that have ingredient matches without name matches are not displayed
-            const chocolateIngredientNonChocolateNameRecipeCard = recipeCards.find(recipeCard => recipeCard.id === chocolateIngredientNonChocolateNameRecipeId);
+            const chocolateIngredientNonChocolateNameRecipeCard = recipeCards.find(recipeCard => recipeCard.recipeId === chocolateIngredientNonChocolateNameRecipeId);
             expect(chocolateIngredientNonChocolateNameRecipeCard).toBeUndefined();
         });
 
@@ -97,12 +97,12 @@ describe('RecipeUseCases', () => {
             const recipeCards = recipeUseCases.getRecipeCards(searchTerm, uncheckedCategoryFilters);
 
             // Assert: Ingredients that match the search term are displayed
-            const chocolateIngredientRecipeCard = recipeCards.find(recipeCard => recipeCard.id === chocolateIngredientRecipeId);
+            const chocolateIngredientRecipeCard = recipeCards.find(recipeCard => recipeCard.recipeId === chocolateIngredientRecipeId);
             expect(chocolateIngredientRecipeCard).not.toBeUndefined();
-            expect(chocolateIngredientRecipeCard!.contentLines.length).greaterThan(0);
+            expect(chocolateIngredientRecipeCard!.relevantIngredients.length).greaterThan(0);
 
             // Assert: Recipes that have ingredient matches without name matches are displayed
-            const chocolateIngredientNonChocolateNameRecipeCard = recipeCards.find(recipeCard => recipeCard.id === chocolateIngredientNonChocolateNameRecipeId);
+            const chocolateIngredientNonChocolateNameRecipeCard = recipeCards.find(recipeCard => recipeCard.recipeId === chocolateIngredientNonChocolateNameRecipeId);
             expect(chocolateIngredientNonChocolateNameRecipeCard).not.toBeUndefined();
         });
 
@@ -115,7 +115,7 @@ describe('RecipeUseCases', () => {
             const filterItems = recipeUseCases.getCategoryFilterItems();
 
             // Assert
-            expect(filterItems.length).toBe(jsonRecipeRepository.getCategories().length);
+            expect(filterItems.length).toBe(recipeRepository.getCategories().length);
         });
 
         it('should return filter items as unchecked', () => {

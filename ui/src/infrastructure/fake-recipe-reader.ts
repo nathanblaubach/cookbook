@@ -1,8 +1,8 @@
-import {JsonRecipe} from "../features/recipes/adapters/repository/json-recipe";
-import {JsonRecipeReader} from "../features/recipes/adapters/repository/json-recipe-reader";
+import {RecipeReader} from "../repositories/recipe-reader";
+import {Recipe} from "../repositories/recipe";
 
-export class FakeJsonRecipeReader implements JsonRecipeReader {
-    read(): JsonRecipe[] {
+export class FakeRecipeReader implements RecipeReader {
+    readRecipes(): Recipe[] {
         return [
             {
                 id: 1,

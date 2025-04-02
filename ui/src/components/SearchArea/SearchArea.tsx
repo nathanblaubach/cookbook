@@ -4,12 +4,14 @@ import './SearchArea.css';
 
 type SearchAreaProps = {
     children: React.ReactNode,
+    type: string,
     searchString: string,
     onSearchStringChange: (searchString: string) => void,
 };
 
 export function SearchArea({
                                children,
+                               type,
                                searchString,
                                onSearchStringChange
                            }: Readonly<SearchAreaProps>): React.JSX.Element {
@@ -24,7 +26,7 @@ export function SearchArea({
             <input
                 className="search-bar"
                 type="textbox"
-                aria-label="Recipe Search Bar"
+                aria-label={`${type} Search Bar`}
                 placeholder="Search"
                 value={searchString}
                 onChange={(event) => onSearchStringChange(event.target.value)}/>

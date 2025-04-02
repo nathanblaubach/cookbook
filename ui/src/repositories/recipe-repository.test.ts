@@ -1,20 +1,20 @@
 import {describe, expect, it} from "vitest";
-import {JsonRecipeRepository} from "./json-recipe-repository.ts";
-import {FakeJsonRecipeReader} from "../../../../infrastructure/fake-json-recipe-reader.ts";
+import {RecipeRepository} from "./recipe-repository.ts";
+import {FakeRecipeReader} from "../infrastructure/fake-recipe-reader.ts";
 
-describe('JsonRecipeRepository', () => {
+describe('RecipeRepository Tests', () => {
 
-    const fakeJsonRecipeReader = new FakeJsonRecipeReader();
-    const jsonRecipeRepository = new JsonRecipeRepository(fakeJsonRecipeReader);
+    const fakeRecipeReader = new FakeRecipeReader();
+    const recipeRepository = new RecipeRepository(fakeRecipeReader);
 
     describe('getRecipesBySearchTermAndCategories', () => {
 
         it.each([true, false])('should get all recipes when searchTerm and categories are empty', (includeCategoryMatches) => {
             // Act
-            const recipes = jsonRecipeRepository.getRecipesBySearchTermAndCategories('', [], includeCategoryMatches);
+            const recipes = recipeRepository.getRecipesBySearchTermAndCategories('', [], includeCategoryMatches);
 
             // Assert
-            expect(recipes.length).toBe(fakeJsonRecipeReader.read().length);
+            expect(recipes.length).toBe(fakeRecipeReader.readRecipes().length);
         });
 
         it.each([true, false])('should only return recipes with given categories', (includeCategoryMatches) => {
@@ -22,7 +22,7 @@ describe('JsonRecipeRepository', () => {
             const categories = ['Dessert', 'Main Course'];
 
             // Act
-            const recipes = jsonRecipeRepository.getRecipesBySearchTermAndCategories('', categories, includeCategoryMatches);
+            const recipes = recipeRepository.getRecipesBySearchTermAndCategories('', categories, includeCategoryMatches);
 
             // Assert
             recipes.forEach(recipe => expect(categories).toContain(recipe.category));
@@ -33,7 +33,7 @@ describe('JsonRecipeRepository', () => {
             const searchTerm = 'chocolate';
 
             // Act
-            const recipes = jsonRecipeRepository.getRecipesBySearchTermAndCategories(searchTerm, [], true);
+            const recipes = recipeRepository.getRecipesBySearchTermAndCategories(searchTerm, [], true);
 
             // Assert
             expect(recipes.map(recipe => recipe.id)).toEqual([1, 2, 3, 4])
@@ -44,7 +44,7 @@ describe('JsonRecipeRepository', () => {
             const searchTerm = 'chocolate';
 
             // Act
-            const recipes = jsonRecipeRepository.getRecipesBySearchTermAndCategories(searchTerm, [], false);
+            const recipes = recipeRepository.getRecipesBySearchTermAndCategories(searchTerm, [], false);
 
             // Assert
             expect(recipes.map(recipe => recipe.id)).toEqual([1, 2, 3])
@@ -58,7 +58,7 @@ describe('JsonRecipeRepository', () => {
             const recipeId = 3;
 
             // Act
-            const recipe = jsonRecipeRepository.getRecipeById(recipeId);
+            const recipe = recipeRepository.getRecipeById(recipeId);
 
             // Assert
             expect(recipe).not.toBeUndefined();
@@ -74,7 +74,7 @@ describe('JsonRecipeRepository', () => {
             const recipeId = -1;
 
             // Act
-            const recipe = jsonRecipeRepository.getRecipeById(recipeId);
+            const recipe = recipeRepository.getRecipeById(recipeId);
 
             // Assert
             expect(recipe).toBeUndefined();
@@ -86,7 +86,7 @@ describe('JsonRecipeRepository', () => {
 
         it('should get all categories with no duplicates', () => {
             // Act
-            const recipes = jsonRecipeRepository.getCategories();
+            const recipes = recipeRepository.getCategories();
 
             // Assert
             expect(recipes).toEqual(['Dessert', 'Beverage', 'Main Course']);

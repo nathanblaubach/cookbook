@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {RouterProvider} from 'react-router';
 import {createBrowserRouter} from 'react-router-dom';
-import {JsonRecipeRepository} from './features/recipes/adapters/repository/json-recipe-repository.ts';
+import {RecipeRepository} from './repositories/recipe-repository.ts';
 import {AboutPage} from './pages/AboutPage.tsx';
 import {RecipeFormPage} from './pages/recipes/RecipeFormPage.tsx';
 import {RecipePage} from './pages/recipes/RecipePage.tsx';
 import {RecipeSearchPage} from './pages/recipes/RecipeSearchPage.tsx';
-import {RecipeUseCases} from './features/recipes/recipe-use-cases.ts';
-import {FileJsonRecipeReader} from './infrastructure/file-json-recipe-reader.ts';
+import {RecipeUseCases} from './use-cases/recipe-use-cases.ts';
+import {JsonFileRecipeReader} from './infrastructure/json-file-recipe-reader.ts';
 
-const recipeRepository: JsonRecipeRepository = new JsonRecipeRepository(new FileJsonRecipeReader());
+const recipeRepository: RecipeRepository = new RecipeRepository(new JsonFileRecipeReader());
 const recipeUseCases: RecipeUseCases = new RecipeUseCases(recipeRepository);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

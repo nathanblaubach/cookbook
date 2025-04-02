@@ -2,11 +2,11 @@ import React from 'react';
 import {useParams} from 'react-router-dom'
 import {Page} from '../../components/Page/Page';
 import {Notecard, NotecardRow} from '../../components/Notecard/Notecard';
-import {Recipe} from '../../features/recipes/recipe';
-import {JsonRecipeRepository} from '../../features/recipes/adapters/repository/json-recipe-repository.ts';
+import {Recipe} from '../../repositories/recipe.ts';
+import {RecipeRepository} from '../../repositories/recipe-repository.ts';
 
 type RecipePageProps = {
-    recipeRepository: JsonRecipeRepository;
+    recipeRepository: RecipeRepository;
 };
 
 export function RecipePage({recipeRepository}: Readonly<RecipePageProps>): React.JSX.Element {

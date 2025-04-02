@@ -1,18 +1,19 @@
 import {describe, expect, it} from "vitest";
-import {FileJsonRecipeReader} from "./file-json-recipe-reader.ts";
+import {JsonFileRecipeReader} from "./json-file-recipe-reader.ts";
+import {Recipe} from "../repositories/recipe.ts";
 
-describe("FileJsonRecipeReader", () => {
+describe("JsonFileRecipeReader Tests", () => {
 
-    it("should get json recipes out of the file", async () => {
+    it("should get json recipes out of the file", async (): Promise<void> => {
         // Arrange
-        const fileJsonRecipeReader = new FileJsonRecipeReader();
+        const fileJsonRecipeReader = new JsonFileRecipeReader();
 
         // Act
-        const recipes = fileJsonRecipeReader.read();
+        const recipes: Recipe[] = fileJsonRecipeReader.readRecipes();
 
         // Assert
         expect(recipes.length).greaterThan(0);
-        recipes.forEach((recipe) => {
+        recipes.forEach((recipe: Recipe): void => {
             expect(recipe.id).not.toBeUndefined();
             expect(recipe.name).not.toBeUndefined();
             expect(recipe.category).not.toBeUndefined();

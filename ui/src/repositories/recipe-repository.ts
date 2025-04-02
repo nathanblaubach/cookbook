@@ -1,13 +1,12 @@
-import {Recipe} from '../../recipe.ts';
-import {RecipeRepository} from "../../recipe-repository.ts";
-import {JsonRecipeReader} from './json-recipe-reader.ts';
+import {RecipeReader} from './recipe-reader.ts';
+import {Recipe} from './recipe.ts';
 
-export class JsonRecipeRepository implements RecipeRepository {
-    constructor(private readonly jsonRecipeReader: JsonRecipeReader) {
+export class RecipeRepository implements RecipeRepository {
+    constructor(private readonly recipeReader: RecipeReader) {
     }
 
     public getRecipesBySearchTermAndCategories(searchTerm: string, categories: string[], includeIngredientMatches: boolean): Recipe[] {
-        return this.jsonRecipeReader.read().filter(recipe => {
+        return this.recipeReader.readRecipes().filter(recipe => {
             const recipeNameMatched = this.includesCaseInsensitive(recipe.name, searchTerm);
 
             const recipeIngredientMatched = includeIngredientMatches && recipe.ingredients
@@ -20,12 +19,12 @@ export class JsonRecipeRepository implements RecipeRepository {
     }
 
     public getRecipeById(id: number): Recipe | undefined {
-        return this.jsonRecipeReader.read().find(recipe => recipe.id === id);
+        return this.recipeReader.readRecipes().find(recipe => recipe.id === id);
     }
 
     public getCategories(): string[] {
         const categories: string[] = [];
-        this.jsonRecipeReader.read().forEach(recipe => {
+        this.recipeReader.readRecipes().forEach(recipe => {
             if (!categories.includes(recipe.category)) {
                 categories.push(recipe.category);
             }

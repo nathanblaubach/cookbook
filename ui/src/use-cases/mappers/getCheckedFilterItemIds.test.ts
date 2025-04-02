@@ -1,6 +1,6 @@
 import {describe, expect, it} from "vitest";
 import {getCheckedFilterItemIds} from "./getCheckedFilterItemIds.ts";
-import {FilterItem} from "../components/Filter/Filter.tsx";
+import {FilterItem} from "../../components/Filter/Filter.tsx";
 
 describe('getCheckedFilterItemIds', () => {
 

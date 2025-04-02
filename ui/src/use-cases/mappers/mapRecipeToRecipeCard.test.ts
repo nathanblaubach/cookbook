@@ -1,8 +1,8 @@
 import {describe, expect, it} from "vitest";
-import {mapRecipeToCardContent} from "./mapRecipeToCardContent.ts";
-import {Recipe} from "../../recipe.ts";
+import {mapRecipeToRecipeCard} from "./mapRecipeToRecipeCard.ts";
+import {Recipe} from "../../repositories/recipe.ts";
 
-describe('mapRecipeToCardContent', () => {
+describe('mapRecipeToRecipeCard', () => {
 
     // Arrange
     const recipes: Recipe[] = [
@@ -50,35 +50,35 @@ describe('mapRecipeToCardContent', () => {
 
     it.each(recipes)('should have the same id as the recipe', (recipe) => {
         // Act
-        const cardContent = mapRecipeToCardContent(recipe);
+        const cardContent = mapRecipeToRecipeCard(recipe);
 
         // Assert
-        expect(cardContent.id).toBe(recipe.id);
+        expect(cardContent.recipeId).toBe(recipe.id);
     });
 
     it.each(recipes)('should have a link to the recipe', (recipe) => {
         // Act
-        const cardContent = mapRecipeToCardContent(recipe);
+        const cardContent = mapRecipeToRecipeCard(recipe);
 
         // Assert
-        expect(cardContent.link).contains('recipes');
-        expect(cardContent.link).contains(recipe.id);
+        expect(cardContent.recipeLink).contains('recipes');
+        expect(cardContent.recipeLink).contains(recipe.id);
     });
 
     it.each(recipes)('should have a title of the recipe name', (recipe) => {
         // Act
-        const cardContent = mapRecipeToCardContent(recipe);
+        const cardContent = mapRecipeToRecipeCard(recipe);
 
         // Assert
-        expect(cardContent.title).toBe(recipe.name);
+        expect(cardContent.recipeName).toBe(recipe.name);
     });
 
     it.each(recipes)('should have no contentLines when no search term is provided', (recipe) => {
         // Act
-        const cardContent = mapRecipeToCardContent(recipe);
+        const cardContent = mapRecipeToRecipeCard(recipe);
 
         // Assert
-        expect(cardContent.contentLines.length).toBe(0);
+        expect(cardContent.relevantIngredients.length).toBe(0);
     });
 
     it.each(recipes)('should have contentLines of ingredients filtered by the search term when it exists', (recipe) => {
@@ -86,11 +86,11 @@ describe('mapRecipeToCardContent', () => {
         const searchTerm = 'sugAr';
 
         // Act
-        const cardContent = mapRecipeToCardContent(recipe, searchTerm);
+        const cardContent = mapRecipeToRecipeCard(recipe, searchTerm);
 
         // Assert
-        expect(cardContent.contentLines.length).greaterThanOrEqual(1);
-        cardContent.contentLines.forEach(contentLine => {
+        expect(cardContent.relevantIngredients.length).greaterThanOrEqual(1);
+        cardContent.relevantIngredients.forEach(contentLine => {
             expect(contentLine.toLocaleLowerCase()).toContain(searchTerm.toLocaleLowerCase());
         });
     });
