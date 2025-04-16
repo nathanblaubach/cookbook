@@ -3,5 +3,5 @@ export type Recipe = {
     name: string;
     category: string;
     ingredients: string[];
-    instructions: string[];
+    instructi3ons: string[];
 };
