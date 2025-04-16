@@ -128,4 +128,6 @@ describe('RecipeUseCases', () => {
 
     });
 
+    it('induceFailure', () => {expect(1).toBe(0);});
+
 });
