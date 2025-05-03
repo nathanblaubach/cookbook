@@ -36,7 +36,7 @@ Install the dependencies
 ```shell
 npm --prefix ui i
 npm --prefix e2e i
-npm --prefix e2e run install-playwright # If you haven't installed playwright before
+npm --prefix e2e run install-browsers
 ```
 
 Run the web application
@@ -45,16 +45,17 @@ Run the web application
 npm --prefix ui run dev
 ```
 
-Run the unit tests
+Run tests continuously
 
 ```shell
 npm --prefix ui run test
 ```
 
-Run the end-to-end tests
+Run tests to see results
 
 ```shell
-npm --prefix e2e run e2e
+npm --prefix ui run coverage # Run unit tests with coverage report
+npm --prefix e2e run e2e     # Run end to end tests
 ```
 
 ## Contributors

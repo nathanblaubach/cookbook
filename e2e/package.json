@@ -3,8 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "install-playwright": "npx playwright install --with-deps",
-    "e2e": "npx playwright test"
+    "install-browsers": "npx playwright install --with-deps",
+    "e2e": "npx playwright test --reporter=list",
+    "report": "npx playwright show-report"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
