@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "install-browsers": "npx playwright install --with-deps",
+    "format": "prettier --write .",
     "e2e": "npx playwright test --reporter=list",
     "report": "npx playwright show-report"
   },
@@ -11,6 +12,7 @@
     "@axe-core/playwright": "^4.10.1",
     "@playwright/test": "^1.49.0",
     "@types/node": "^22.9.0",
-    "axe-core": "^4.10.2"
+    "axe-core": "^4.10.2",
+    "prettier": "^3.5.3"
   }
 }

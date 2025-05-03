@@ -1,24 +1,24 @@
 .cards {
-    display: grid;
-    grid-gap: .75rem;
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-gap: 0.75rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 @media (max-width: 768px) {
-    .cards {
-        grid-template-columns: repeat(1, 1fr);
-    }
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .card-link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .card {
-    box-shadow: black 0 0 3px;
-    border-radius: .5rem;
-    background-color: white;
-    color: black;
-    text-align: center;
-    padding: 1rem;
+  box-shadow: black 0 0 3px;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 1rem;
 }

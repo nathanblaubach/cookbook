@@ -1,54 +1,54 @@
 .notecard {
-    border: 1px darkgray solid;
-    background-color: lightyellow;
-    color: black;
-    padding: 0;
-    margin: 0;
+  border: 1px darkgray solid;
+  background-color: lightyellow;
+  color: black;
+  padding: 0;
+  margin: 0;
 }
 
 .notecard-row {
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 .notecard-text {
-    background-color: transparent;
-    outline: transparent;
-    border: transparent;
-    width: 100%;
-    margin: 0;
-    padding: .5rem;
-    color: black;
+  background-color: transparent;
+  outline: transparent;
+  border: transparent;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  color: black;
 }
 
 .notecard-row-title {
-    border-bottom: 2px red solid;
+  border-bottom: 2px red solid;
 }
 
 .notecard-text-title {
-    font-size: 2rem;
-    font-weight: bold;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .notecard-row-border {
-    border-bottom: 1px darkgray solid;
+  border-bottom: 1px darkgray solid;
 }
 
 .notecard-text-font {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .notecard-row-edit {
-    display: grid;
-    grid-template-columns: 1fr 2rem 2rem 2rem;
-    padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 2rem 2rem 2rem;
+  padding: 0;
 }
 
 .notecard-row-edit button {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
 }

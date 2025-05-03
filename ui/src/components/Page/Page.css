@@ -1,40 +1,41 @@
-html, body {
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
-body, input {
-    font-family: sans-serif;
-    background-color: white;
-    color: black;
+body,
+input {
+  font-family: sans-serif;
+  background-color: white;
+  color: black;
 }
-
 
 .cookbook-logo {
-    color: white;
-    width: 4rem;
+  color: white;
+  width: 4rem;
 }
 
 header {
-    height: 4rem;
-    padding: .75rem;
-    display: flex;
-    justify-content: space-between;
+  height: 4rem;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 main {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: .75rem;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0.75rem;
 }
 
 nav {
-    margin: 1.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .nav-link {
-    margin-left: 1rem;
-    color: #00304E;
-    text-decoration: none;
-    font-weight: bold;
+  margin-left: 1rem;
+  color: #00304e;
+  text-decoration: none;
+  font-weight: bold;
 }

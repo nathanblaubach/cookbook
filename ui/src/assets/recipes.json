@@ -49,9 +49,7 @@
       "1 cup creamer",
       "1 cup powdered sugar"
     ],
-    "instructions": [
-      "Use 1/3 cup cocoa mix in 1 cup hot water"
-    ]
+    "instructions": ["Use 1/3 cup cocoa mix in 1 cup hot water"]
   },
   {
     "id": 3,
@@ -64,9 +62,7 @@
       "16 ounce ginger ale",
       "1 pint sherbet-any flavor"
     ],
-    "instructions": [
-      "Mix all ingredients together"
-    ]
+    "instructions": ["Mix all ingredients together"]
   },
   {
     "id": 4,
@@ -119,9 +115,7 @@
       "1 tsp sugar",
       "1 tsp worchestershire sauce"
     ],
-    "instructions": [
-      "Chill, serve and enjoy"
-    ]
+    "instructions": ["Chill, serve and enjoy"]
   },
   {
     "id": 8,
@@ -150,9 +144,7 @@
       "1 quart pineapple sherbet",
       "Fresh pineapple cubes and seedless green grapes to garnish"
     ],
-    "instructions": [
-      "Mix all ingredients together"
-    ]
+    "instructions": ["Mix all ingredients together"]
   },
   {
     "id": 10,
@@ -242,9 +234,7 @@
     "id": 14,
     "name": "Chestnuts",
     "category": "Hors d'oeuvre",
-    "ingredients": [
-      "1/2 slice bacon per chestnut"
-    ],
+    "ingredients": ["1/2 slice bacon per chestnut"],
     "instructions": [
       "Wrap bacon slices around chestnuts with a toothpick",
       "Place on cookie sheet and bake @ 350 degrees for 1 hour",
@@ -348,9 +338,7 @@
       "2 tsp dill weed",
       "2 tsp Beau Monde seasoning"
     ],
-    "instructions": [
-      "Mix together and chill"
-    ]
+    "instructions": ["Mix together and chill"]
   },
   {
     "id": 21,
@@ -362,9 +350,7 @@
       "1/2 tsp cinnamon",
       "1/4 tsp nutmeg"
     ],
-    "instructions": [
-      "Mix all ingredients together"
-    ]
+    "instructions": ["Mix all ingredients together"]
   },
   {
     "id": 22,
@@ -385,11 +371,7 @@
     "id": 23,
     "name": "Apple Snickers",
     "category": "Hors d'oeuvre",
-    "ingredients": [
-      "Apples",
-      "Snickers bars",
-      "Cool Whip"
-    ],
+    "ingredients": ["Apples", "Snickers bars", "Cool Whip"],
     "instructions": [
       "Cut up Apples and Snickers bars",
       "Mix all ingredients together"
@@ -435,9 +417,7 @@
       "4 cups nuts",
       "6 cups pretzels"
     ],
-    "instructions": [
-      "Mix all ingredients together"
-    ]
+    "instructions": ["Mix all ingredients together"]
   },
   {
     "id": 26,
@@ -1079,9 +1059,7 @@
       "Dash of mustard",
       "Can add 2 - 3 cups shoestring potatoes just before serving, if desired"
     ],
-    "instructions": [
-      "Mix all ingredients together"
-    ]
+    "instructions": ["Mix all ingredients together"]
   },
   {
     "id": 52,
@@ -1114,9 +1092,7 @@
       "1 -  4 oz. cream cheese",
       "1/2 pkg. Good Seasons Italian dressing packet"
     ],
-    "instructions": [
-      "Place all ingredients in crock pot for 5 hours."
-    ]
+    "instructions": ["Place all ingredients in crock pot for 5 hours."]
   },
   {
     "id": 54,
@@ -1844,9 +1820,7 @@
       "1 c. cooked chopped spinach, drained",
       "1/2 c. grated cheddar cheese"
     ],
-    "instructions": [
-      "Bake @ 400 for 20 minutes. Serves 6-8"
-    ]
+    "instructions": ["Bake @ 400 for 20 minutes. Serves 6-8"]
   },
   {
     "id": 82,
@@ -2033,10 +2007,7 @@
       "1 t. salt",
       "1/8 t. Pepper"
     ],
-    "instructions": [
-      "Drain all beans",
-      "Add remaining ingredients"
-    ]
+    "instructions": ["Drain all beans", "Add remaining ingredients"]
   },
   {
     "id": 90,
@@ -2379,10 +2350,7 @@
       "1/4 c. vinegar",
       "1 t. dry mustard"
     ],
-    "instructions": [
-      "Combine in dish.",
-      "Bake 1 hour or so @ 350 degrees."
-    ]
+    "instructions": ["Combine in dish.", "Bake 1 hour or so @ 350 degrees."]
   },
   {
     "id": 105,
@@ -2494,14 +2462,8 @@
     "id": 109,
     "name": "Kathryn's Pickled Beets",
     "category": "Side Dish",
-    "ingredients": [
-      "I c. vinegar",
-      "2 c. sugar",
-      "3 c. beet juice "
-    ],
-    "instructions": [
-      "Quarter small beets, eighths for larger ones"
-    ]
+    "ingredients": ["I c. vinegar", "2 c. sugar", "3 c. beet juice "],
+    "instructions": ["Quarter small beets, eighths for larger ones"]
   },
   {
     "id": 110,
@@ -3022,9 +2984,7 @@
       "1 1/2 t. lemon juice",
       "1 1/2 c. chopped nuts"
     ],
-    "instructions": [
-      "Bake @350 for 55 min."
-    ]
+    "instructions": ["Bake @350 for 55 min."]
   },
   {
     "id": 131,
@@ -3475,12 +3435,7 @@
     "id": 149,
     "name": "Coffee Cake Streusel",
     "category": "Breakfast",
-    "ingredients": [
-      "1 c. flour",
-      "1 c. sugar",
-      "1/2 t. salt",
-      "1/2 c. butter"
-    ],
+    "ingredients": ["1 c. flour", "1 c. sugar", "1/2 t. salt", "1/2 c. butter"],
     "instructions": [
       "Cut ingredients together until crumbly.",
       "Can be kept in refrigerator for weeks."
@@ -3654,10 +3609,7 @@
       "2 t. Vanilla (add last)",
       "1 1/2 t. lemon juice or vinegar"
     ],
-    "instructions": [
-      "Bake 275 degrees 40-60 minutes",
-      "Makes 12 individual"
-    ]
+    "instructions": ["Bake 275 degrees 40-60 minutes", "Makes 12 individual"]
   },
   {
     "id": 159,
@@ -3683,11 +3635,7 @@
     "id": 160,
     "name": "Browned Butter Frosting",
     "category": "Dessert",
-    "ingredients": [
-      "2 T. butter",
-      "1 T. hot water",
-      "1 1/2 c. powdered sugar"
-    ],
+    "ingredients": ["2 T. butter", "1 T. hot water", "1 1/2 c. powdered sugar"],
     "instructions": [
       "Brown butter, remove from heat & add powdered sugar.",
       "Cream to make frosting of spreading consistency.",
@@ -5698,14 +5646,8 @@
     "id": 239,
     "name": "Mac's Window Cleaning Solution",
     "category": "Miscellaneous",
-    "ingredients": [
-      "1/4 cup ammonia",
-      "1/8 cup vinegar",
-      "1 quart warm water"
-    ],
-    "instructions": [
-      "Mix all ingredients together"
-    ]
+    "ingredients": ["1/4 cup ammonia", "1/8 cup vinegar", "1 quart warm water"],
+    "instructions": ["Mix all ingredients together"]
   },
   {
     "id": 240,
