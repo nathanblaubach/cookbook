@@ -51,7 +51,7 @@ Run the unit tests
 npm --prefix ui run test
 ```
 
-Run the end to end tests (The web application must be running)
+Run the end-to-end tests
 
 ```shell
 npm --prefix e2e run e2e
