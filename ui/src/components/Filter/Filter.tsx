@@ -32,7 +32,7 @@ export function Filter({
   }
 
   return (
-    <>
+    <div className="filter-area">
       <h2>{type}</h2>
       <div className="filters">
         {items.map((filterItem) => (
@@ -52,6 +52,6 @@ export function Filter({
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }

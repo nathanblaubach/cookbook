@@ -19,20 +19,22 @@ export function SearchArea({
 
   return (
     <div className="search-area">
-      <button
-        onClick={() => setShowFilters(!showFilters)}
-        aria-label="Show Filter Area"
-      >
-        <img src={filterImage} alt="Filter Icon" />
-      </button>
-      <input
-        className="search-bar"
-        type="textbox"
-        aria-label={`${type} Search Bar`}
-        placeholder="Search"
-        value={searchString}
-        onChange={(event) => onSearchStringChange(event.target.value)}
-      />
+      <div className="search-bar">
+        <button
+          onClick={() => setShowFilters(!showFilters)}
+          aria-label="Show Filter Area"
+        >
+          <img src={filterImage} alt="Filter Icon" />
+        </button>
+        <input
+          className="search-box"
+          type="textbox"
+          aria-label={`${type} Search Bar`}
+          placeholder="Search"
+          value={searchString}
+          onChange={(event) => onSearchStringChange(event.target.value)}
+        />
+      </div>
       {showFilters && children}
     </div>
   );
