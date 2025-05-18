@@ -1,8 +1,32 @@
 import { expect, test } from "@playwright/test";
 
+test("navigate to the search page", async ({ page }) => {
+  // Go to the search page
+  await page.goto("/");
+
+  // Click a recipe link
+  await page.getByRole("link", { name: "Search" }).click({ force: true });
+
+  // Check that the recipe page loads
+  await expect(page.getByRole("heading", { name: "Recipes" })).toBeVisible();
+});
+
+test("navigate to the about page", async ({ page }) => {
+  // Go to the search page
+  await page.goto("/");
+
+  // Click a recipe link
+  await page.getByRole("link", { name: "About" }).click({ force: true });
+
+  // Check that the recipe page loads
+  await expect(
+    page.getByRole("heading", { name: "The McClain Family Cookbook" }),
+  ).toBeVisible();
+});
+
 test("navigate to a recipe page", async ({ page }) => {
   // Go to the search page
-  await page.goto("/recipes");
+  await page.goto("/");
 
   // Click a recipe link
   await page
@@ -17,7 +41,7 @@ test("navigate to a recipe page", async ({ page }) => {
 
 test("search for a recipe", async ({ page }) => {
   // Go to the search page
-  await page.goto("/recipes");
+  await page.goto("/");
 
   // Ensure recipes exist before search
   await expect(
@@ -39,7 +63,7 @@ test("search for a recipe", async ({ page }) => {
 
 test("filter recipes by category", async ({ page }) => {
   // Go to the search page
-  await page.goto("/recipes");
+  await page.goto("/");
 
   // Ensure recipes exist before search
   await expect(
