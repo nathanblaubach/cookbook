@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("Navigate to recipe", async ({ page }) => {
+test("navigate to a recipe page", async ({ page }) => {
   // Go to the search page
   await page.goto("/recipes");
 
@@ -10,12 +10,12 @@ test("Navigate to recipe", async ({ page }) => {
     .click({ force: true });
 
   // Check that the recipe page loads
-  await expect(
-    page.getByRole("heading", { name: "Recipe Name" }),
-  ).toHaveText("Hot Mulled Cider");
+  await expect(page.getByRole("heading", { name: "Recipe Name" })).toHaveText(
+    "Hot Mulled Cider",
+  );
 });
 
-test("Search for a recipe", async ({ page }) => {
+test("search for a recipe", async ({ page }) => {
   // Go to the search page
   await page.goto("/recipes");
 
@@ -37,7 +37,7 @@ test("Search for a recipe", async ({ page }) => {
   ).not.toBeVisible();
 });
 
-test("Filter recipes", async ({ page }) => {
+test("filter recipes by category", async ({ page }) => {
   // Go to the search page
   await page.goto("/recipes");
 

@@ -6,14 +6,14 @@ async function expectNoAccessibilityViolation(page: Page) {
   expect(accessibilityScanResults.violations).toEqual([]);
 }
 
-test("Recipe Search Page (base url)", async ({ page }) => {
+test("recipe search page (base url)", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveTitle(/McClain Family Cookbook/);
   await expect(page.getByRole("heading", { name: "Recipes" })).toBeVisible();
   await expectNoAccessibilityViolation(page);
 });
 
-test("Recipe Search Page", async ({ page }) => {
+test("recipe search page", async ({ page }) => {
   await page.goto("/recipes");
   await page
     .getByRole("button", { name: "Show Filter Area" })
@@ -23,7 +23,7 @@ test("Recipe Search Page", async ({ page }) => {
   await expectNoAccessibilityViolation(page);
 });
 
-test("Recipe Page: Found", async ({ page }) => {
+test("recipe page: found", async ({ page }) => {
   const recipeId = 0;
   await page.goto(`/recipes/${recipeId}`);
   await expect(
@@ -32,7 +32,7 @@ test("Recipe Page: Found", async ({ page }) => {
   await expectNoAccessibilityViolation(page);
 });
 
-test("Recipe Page: Not Found", async ({ page }) => {
+test("recipe page: not found", async ({ page }) => {
   const recipeId = -1;
   await page.goto(`/recipes/${recipeId}`);
   await expect(
@@ -41,7 +41,7 @@ test("Recipe Page: Not Found", async ({ page }) => {
   await expectNoAccessibilityViolation(page);
 });
 
-test("About Page", async ({ page }) => {
+test("about page", async ({ page }) => {
   await page.goto("/about");
   await expect(
     page.getByRole("heading", { name: "The McClain Family Cookbook" }),
