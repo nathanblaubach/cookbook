@@ -28,6 +28,27 @@ describe("RecipeUseCases", () => {
   ];
 
   describe("getRecipeCards", () => {
+    it("should be sorted by recipe name", () => {
+      // Arrange
+      const searchTerm = "";
+
+      // Act
+      const recipeCards = recipeUseCases.getRecipeCards(
+        searchTerm,
+        uncheckedCategoryFilters,
+      );
+
+      // Assert
+      expect(recipeCards.length).toBe(fakeRecipeReader.readRecipes().length);
+      expect(recipeCards.map((recipeCard) => recipeCard.recipeName)).toEqual([
+        "Chicken Alfredo",
+        "Chocolate Cake",
+        "Chocolate Chip Cookies",
+        "Hot Chocolate",
+        "Hot Cocoa",
+      ]);
+    });
+
     it("should contain all recipes when search term and category ids do not limit them", () => {
       // Arrange
       const searchTerm = "";
@@ -71,7 +92,7 @@ describe("RecipeUseCases", () => {
 
       // Assert
       expect(recipeCards.map((recipeCard) => recipeCard.recipeId)).toEqual([
-        1, 2, 5,
+        5, 1, 2,
       ]);
     });
 

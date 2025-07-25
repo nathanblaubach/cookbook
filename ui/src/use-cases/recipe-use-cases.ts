@@ -26,7 +26,8 @@ export class RecipeUseCases {
           recipe,
           ingredientSearchIsActive ? searchTerm : undefined,
         ),
-      );
+      )
+      .sort((a, b) => a.recipeName.localeCompare(b.recipeName));
   }
 
   public getCategoryFilterItems(): FilterItem[] {
