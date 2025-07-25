@@ -45,8 +45,3 @@ Thumbs.db
 node_modules
 dist
 coverage
-
-#firebase
-.firebase
-.firebaserc
-firebase.json
