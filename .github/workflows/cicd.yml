@@ -1,0 +1,56 @@
+# Combined Node.js CI and Firebase Hosting Deploy Workflow
+# Runs checks on both push and pull_request, deploys only on push to main after successful build
+
+name: Node.js CI & Firebase Deploy
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: ui/package-lock.json
+
+      - name: Install dependencies
+        run: npm --prefix ui ci
+
+      - name: Lint code
+        run: npm --prefix ui run lint
+
+      - name: Check code formatting
+        run: npm --prefix ui run format:check
+
+      - name: Run tests
+        run: npm --prefix ui run test
+
+      - name: Build project
+        run: npm --prefix ui run build
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm --prefix ui ci && npm --prefix ui run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MCCLAINCOOKBOOK }}
+          channelId: live
+          projectId: mcclaincookbook
