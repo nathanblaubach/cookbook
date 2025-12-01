@@ -46,7 +46,7 @@ export function NotecardForm({
           aria-label={label}
           placeholder={label}
           value={text}
-          ref={(input) => input && input.focus()}
+          ref={(input) => input?.focus()}
           onInput={(event) => onTextChange(event.currentTarget.value)}
         />
       </div>
@@ -236,7 +236,9 @@ export function NotecardListField({
             className="notecard-text notecard-text-edit"
             placeholder={placeholder}
             value={item}
-            ref={(input) => selectedIndex === index && input && input.focus()}
+            ref={(input) =>
+              (selectedIndex === index && input?.focus()) || undefined
+            }
             onFocus={() => setSelectedIndex(index)}
             onBlur={() => setSelectedIndex(-1)}
             onInput={(event) =>
