@@ -5,11 +5,17 @@
   "scripts": {
     "install-browsers": "npx playwright install --with-deps",
     "format": "prettier --write .",
-    "e2e": "npx playwright test --reporter=list",
-    "report": "npx playwright show-report"
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "test": "npx playwright test --reporter=list",
+    "report": "npx playwright test"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "typescript-eslint": "^8.48.0",
     "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1",
     "axe-core": "^4.11.0",
