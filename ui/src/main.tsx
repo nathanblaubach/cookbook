@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router";
-import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { RecipeRepository } from "./repositories/recipe-repository.ts";
 import { AboutPage } from "./pages/AboutPage.tsx";
 import { RecipeFormPage } from "./pages/recipes/RecipeFormPage.tsx";
