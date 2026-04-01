@@ -55,7 +55,7 @@ Run tests to see results
 
 ```shell
 npm --prefix ui run coverage # Run unit tests with coverage report
-npm --prefix e2e run e2e     # Run end to end tests
+npm --prefix e2e run test    # Run end to end tests
 ```
 
 ## Contributors
