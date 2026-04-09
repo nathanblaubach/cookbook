@@ -11,14 +11,14 @@
     "report": "npx playwright test"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.11.0",
-    "@eslint/js": "^9.39.1",
-    "eslint": "^9.39.1",
-    "globals": "^16.5.0",
-    "typescript-eslint": "^8.48.0",
-    "@playwright/test": "^1.57.0",
-    "@types/node": "^24.10.1",
-    "axe-core": "^4.11.0",
-    "prettier": "^3.7.3"
+    "@axe-core/playwright": "^4.11.1",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.0",
+    "globals": "^17.4.0",
+    "typescript-eslint": "^8.58.1",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.5.2",
+    "axe-core": "^4.11.2",
+    "prettier": "^3.8.1"
   }
 }
