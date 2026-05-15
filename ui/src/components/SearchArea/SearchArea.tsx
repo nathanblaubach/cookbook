@@ -28,7 +28,7 @@ export function SearchArea({
         </button>
         <input
           className="search-box"
-          type="textbox"
+          type="text"
           aria-label={`${type} Search Bar`}
           placeholder="Search"
           value={searchString}

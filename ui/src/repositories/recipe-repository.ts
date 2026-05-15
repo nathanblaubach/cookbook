@@ -1,7 +1,7 @@
 import { RecipeReader } from "./recipe-reader.ts";
 import { Recipe } from "./recipe.ts";
 
-export class RecipeRepository implements RecipeRepository {
+export class RecipeRepository {
   constructor(private readonly recipeReader: RecipeReader) {}
 
   public getRecipesBySearchTermAndCategories(
