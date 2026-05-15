@@ -27,13 +27,13 @@ jobs:
           cache-dependency-path: ui/package-lock.json
 
       - name: Install dependencies
-        run: npm --prefix ui ci
+        run: npm ci
 
       - name: Lint code
-        run: npm --prefix ui run lint
+        run: npm run lint
 
       - name: Check code formatting
-        run: npm --prefix ui run format:check
+        run: npm run format:check
 
       - name: Run tests
         run: npm --prefix ui run test
