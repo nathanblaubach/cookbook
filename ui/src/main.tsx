@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import { RecipeRepository } from "./repositories/recipe-repository.ts";
 import { AboutPage } from "./pages/AboutPage.tsx";
 import { RecipePage } from "./pages/recipes/RecipePage.tsx";
@@ -17,10 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider
       router={createBrowserRouter([
-        {
-          path: "/",
-          element: <RecipeSearchPage recipeUseCases={recipeUseCases} />,
-        },
+        { path: "/", element: <Navigate to="/recipes" replace /> },
         {
           path: "recipes",
           element: <RecipeSearchPage recipeUseCases={recipeUseCases} />,
