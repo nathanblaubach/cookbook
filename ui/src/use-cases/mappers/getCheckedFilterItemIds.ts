@@ -1,13 +1,5 @@
 import { FilterItem } from "../../components/Filter/Filter.tsx";
 
 export function getCheckedFilterItemIds(filterItems: FilterItem[]): string[] {
-  return filterItems.reduce(
-    (checkedIds: string[], filterItem: FilterItem): string[] => {
-      if (filterItem.checked) {
-        checkedIds.push(filterItem.id);
-      }
-      return checkedIds;
-    },
-    [],
-  );
+  return filterItems.filter((item) => item.checked).map((item) => item.id);
 }
