@@ -33,13 +33,11 @@ export class RecipeRepository {
   }
 
   public getCategories(): string[] {
-    const categories: string[] = [];
-    this.recipeReader.readRecipes().forEach((recipe) => {
-      if (!categories.includes(recipe.category)) {
-        categories.push(recipe.category);
-      }
-    });
-    return categories;
+    return [
+      ...new Set(
+        this.recipeReader.readRecipes().map((recipe) => recipe.category),
+      ),
+    ];
   }
 
   private includesCaseInsensitive(
