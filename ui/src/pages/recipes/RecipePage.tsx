@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Page } from "../../components/Page/Page";
 import { Notecard, NotecardRow } from "../../components/Notecard/Notecard";
@@ -12,7 +12,9 @@ type RecipePageProps = {
 export function RecipePage({
   recipeRepository,
 }: Readonly<RecipePageProps>): React.JSX.Element {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const recipeId: number = parseInt(useParams().id!, 10);
   const recipe: Recipe | undefined = recipeRepository.getRecipeById(recipeId);
