@@ -5,7 +5,6 @@ type NotecardProps = {
   children: React.ReactNode;
   label: string;
   text: string;
-  onTextChange?: (event: string) => void | undefined;
 };
 
 export function Notecard({
