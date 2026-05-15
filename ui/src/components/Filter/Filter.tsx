@@ -36,11 +36,7 @@ export function Filter({
       <h2>{type}</h2>
       <div className="filters">
         {items.map((filterItem) => (
-          <div
-            key={filterItem.id}
-            className="filter"
-            style={{ marginBottom: ".5rem" }}
-          >
+          <div key={filterItem.id} className="filter">
             <input
               type="checkbox"
               aria-label={filterItem.name}
