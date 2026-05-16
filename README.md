@@ -2,8 +2,7 @@
 
 ## Purpose
 
-This cookbook is a simple list of recipes for my mom's family's family cookbook, but I am writing it in a way that (I
-hope) is easily reusable. It is being developed using Typescript, React and Vite.
+This cookbook is a simple list of recipes for my mom's family's family cookbook. It is being developed using Typescript, React and Vite.
 
 ## Design Decisions
 
@@ -23,39 +22,34 @@ hope) is easily reusable. It is being developed using Typescript, React and Vite
 
 You will need to have [node.js](https://nodejs.org) and [npm](https://www.npmjs.com) installed.
 
-Clone the repository
+Set up source code and dependencies
 
 ```shell
-# Clone this repository and switch to the directory
 git clone https://github.com/nathanblaubach/cookbook.git
 cd cookbook
-```
-
-Install the dependencies
-
-```shell
-npm --prefix ui i
-npm --prefix e2e i
+npm install
 npm --prefix e2e run install-browsers
 ```
 
-Run the web application
+Run the application
 
 ```shell
 npm --prefix ui run dev
 ```
 
-Run tests continuously
+Run the tests
 
 ```shell
-npm --prefix ui run test
+npm --prefix ui run test     # Unit tests (continuous): vitest
+npm --prefix ui run coverage # Unit tests with coverage: vitest
+npm --prefix e2e run test    # End to End: playwright
 ```
 
-Run tests to see results
+Run other quality checks
 
 ```shell
-npm --prefix ui run coverage # Run unit tests with coverage report
-npm --prefix e2e run test    # Run end to end tests
+npm run format:check         # Formatting: prettier
+npm run lint                 # Linter: eslint
 ```
 
 ## Contributors
