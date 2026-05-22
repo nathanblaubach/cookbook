@@ -30,5 +30,10 @@ export default [
   {
     ...pluginReact.configs.flat.recommended,
     files: ["ui/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    settings: { react: { version: "detect" } },
+  },
+  {
+    ...pluginReact.configs.flat["jsx-runtime"],
+    files: ["ui/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
   },
 ];
