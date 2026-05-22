@@ -36,10 +36,12 @@ jobs:
         run: npm run format:check
 
       - name: Run tests
-        run: npm --prefix ui run test
+        run: npm run test
+        working-directory: ui
 
       - name: Build project
-        run: npm --prefix ui run build
+        run: npm run build
+        working-directory: ui
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -47,7 +49,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm --prefix ui ci && npm --prefix ui run build
+      - run: npm ci && npm run build
+        working-directory: ui
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
