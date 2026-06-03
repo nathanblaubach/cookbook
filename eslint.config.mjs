@@ -9,12 +9,10 @@ export default [
   {
     ignores: [
       "node_modules/**",
-      "e2e/node_modules/**",
-      "e2e/playwright-report/**",
-      "e2e/test-results/**",
-      "ui/node_modules/**",
-      "ui/coverage/**",
-      "ui/dist/**",
+      "coverage/**",
+      "dist/**",
+      "playwright-report/**",
+      "test-results/**",
     ],
   },
   {
@@ -22,18 +20,18 @@ export default [
     languageOptions: { globals: globals.node },
   },
   {
-    files: ["ui/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["src/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: { globals: globals.browser },
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   {
     ...pluginReact.configs.flat.recommended,
-    files: ["ui/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["src/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     settings: { react: { version: "detect" } },
   },
   {
     ...pluginReact.configs.flat["jsx-runtime"],
-    files: ["ui/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["src/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
   },
 ];

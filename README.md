@@ -28,21 +28,21 @@ Set up source code and dependencies
 git clone https://github.com/nathanblaubach/cookbook.git
 cd cookbook
 npm install
-npm --prefix e2e run install-browsers
+npm run e2e:install-browsers
 ```
 
 Run the application
 
 ```shell
-npm --prefix ui run dev
+npm run dev
 ```
 
 Run the tests
 
 ```shell
-npm --prefix ui run test     # Unit tests (continuous): vitest
-npm --prefix ui run coverage # Unit tests with coverage: vitest
-npm --prefix e2e run test    # End to End: playwright
+npm run test     # Unit tests (continuous): vitest
+npm run coverage # Unit tests with coverage: vitest
+npm run e2e:test # End to End: playwright
 ```
 
 Run other quality checks

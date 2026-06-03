@@ -20,7 +20,7 @@ export function AboutPage(): React.JSX.Element {
       <ul>
         <li>
           <a href="https://github.com/nathanblaubach/cookbook">
-            Source Code on GitHub (MIT)
+            Source Code on GitHub
           </a>
         </li>
         <li>
