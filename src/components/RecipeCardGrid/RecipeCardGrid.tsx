@@ -22,8 +22,8 @@ export function RecipeCardGrid({
         <Link className="card-link" key={card.recipeId} to={card.recipeLink}>
           <div className="card">
             <h2>{card.recipeName}</h2>
-            {card.relevantIngredients.map((line, index) => (
-              <p key={`${card.recipeId}-${index}`}>{line}</p>
+            {card.relevantIngredients.map((line) => (
+              <p key={line}>{line}</p>
             ))}
           </div>
         </Link>
