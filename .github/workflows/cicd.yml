@@ -30,7 +30,7 @@ jobs:
         run: npm audit signatures
 
       - name: Lint code
-        run: npm run lint
+        run: npm run lint:check
 
       - name: Check code formatting
         run: npm run format:check
