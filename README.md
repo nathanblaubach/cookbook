@@ -48,8 +48,8 @@ npm run e2e:test # End to End: playwright
 Run other quality checks
 
 ```shell
-npm run format:check         # Formatting: prettier
-npm run lint                 # Linter: eslint
+npm run lint:check   # Lint: eslint
+npm run format:check # Format: prettier
 ```
 
 ## Contributors

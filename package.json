@@ -13,9 +13,10 @@
     "e2e:install-browsers": "npx playwright install --with-deps",
     "e2e:test": "npx playwright test --reporter=list",
     "e2e:report": "npx playwright test",
-    "format": "prettier --write .",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format:check": "prettier --check .",
-    "lint": "eslint ."
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "react": "19.2.7",
