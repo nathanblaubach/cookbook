@@ -7,6 +7,10 @@
     {
       "matchManagers": ["github-actions"],
       "pinDigests": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "minor and patch updates"
     }
   ]
 }
