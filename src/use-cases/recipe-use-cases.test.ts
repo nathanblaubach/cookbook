@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { RecipeUseCases } from "./recipe-use-cases.ts";
 import { FilterItem } from "../components/Filter/Filter.tsx";
-import { FakeRecipeReader } from "../infrastructure/fake-recipe-reader.ts";
+import { FakeRecipeReader } from "../infrastructure/recipe-reader.fake.ts";
 import { RecipeRepository } from "../repositories/recipe-repository.ts";
 
 describe("RecipeUseCases", () => {

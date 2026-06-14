@@ -12,9 +12,12 @@ type RecipePageProps = {
 export function RecipePage({
   recipeRepository,
 }: Readonly<RecipePageProps>): React.JSX.Element {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useEffect(
+    () => {
+      window.scrollTo(0, 0);
+    },
+    /* Stryker disable next-line ArrayDeclaration: any constant array here runs the effect once on mount, same as [] */ [],
+  );
 
   const recipeId: number = parseInt(useParams().id!, 10);
   const recipe: Recipe | undefined = recipeRepository.getRecipeById(recipeId);

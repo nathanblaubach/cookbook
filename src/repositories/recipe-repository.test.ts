@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { RecipeRepository } from "./recipe-repository.ts";
-import { FakeRecipeReader } from "../infrastructure/fake-recipe-reader.ts";
+import { FakeRecipeReader } from "../infrastructure/recipe-reader.fake.ts";
 
 describe("RecipeRepository Tests", () => {
   const fakeRecipeReader = new FakeRecipeReader();
@@ -55,6 +55,21 @@ describe("RecipeRepository Tests", () => {
 
       // Assert
       expect(recipes.map((recipe) => recipe.id)).toEqual([1, 2, 3, 4]);
+    });
+
+    it("should return a recipe when only some of its ingredients match the search term", () => {
+      // Arrange
+      const searchTerm = "pasta";
+
+      // Act
+      const recipes = recipeRepository.getRecipesBySearchTermAndCategories(
+        searchTerm,
+        [],
+        true,
+      );
+
+      // Assert
+      expect(recipes.map((recipe) => recipe.id)).toContain(5);
     });
 
     it("should only return recipes that match their name with the given search term", () => {

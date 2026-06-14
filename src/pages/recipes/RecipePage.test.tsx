@@ -39,6 +39,11 @@ const chickenAlfredo: Recipe = {
 };
 
 describe("RecipePage", () => {
+  it("scrolls to the top of the page on mount", () => {
+    renderRecipePage(1, chickenAlfredo);
+    expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
+  });
+
   it("renders 'Recipe Not Found' when the recipe does not exist", () => {
     renderRecipePage(999, undefined);
     expect(screen.getByText("Recipe Not Found")).toBeDefined();
@@ -49,11 +54,30 @@ describe("RecipePage", () => {
     expect(screen.getByText("Chicken Alfredo")).toBeDefined();
   });
 
+  it("renders a 'Recipe Name' label on the title", () => {
+    renderRecipePage(1, chickenAlfredo);
+    expect(screen.getByLabelText("Recipe Name")).toBeDefined();
+  });
+
+  it("renders a bold 'Ingredients:' label above the ingredients", () => {
+    renderRecipePage(1, chickenAlfredo);
+    expect(
+      (screen.getByText("Ingredients:") as HTMLElement).style.fontWeight,
+    ).toBe("bold");
+  });
+
   it("renders each ingredient", () => {
     renderRecipePage(1, chickenAlfredo);
     expect(screen.getByText("chicken")).toBeDefined();
     expect(screen.getByText("pasta")).toBeDefined();
     expect(screen.getByText("alfredo sauce")).toBeDefined();
+  });
+
+  it("renders a bold 'Instructions:' label above the instructions", () => {
+    renderRecipePage(1, chickenAlfredo);
+    expect(
+      (screen.getByText("Instructions:") as HTMLElement).style.fontWeight,
+    ).toBe("bold");
   });
 
   it("renders each instruction", () => {

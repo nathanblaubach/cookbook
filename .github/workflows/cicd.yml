@@ -38,6 +38,9 @@ jobs:
       - name: Run tests
         run: npm run coverage
 
+      - name: Run mutation testing
+        run: npm run mutation
+
       - name: Build project
         run: npm run build
 

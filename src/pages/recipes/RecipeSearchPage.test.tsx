@@ -43,6 +43,19 @@ describe("RecipeSearchPage", () => {
     expect(screen.getByText("Chocolate Cake")).toBeDefined();
   });
 
+  it("calls getRecipeCards with an empty initial search string", () => {
+    const recipeUseCases = makeRecipeUseCases();
+    render(
+      <MemoryRouter>
+        <RecipeSearchPage recipeUseCases={recipeUseCases} />
+      </MemoryRouter>,
+    );
+    expect(recipeUseCases.getRecipeCards).toHaveBeenCalledWith(
+      "",
+      expect.anything(),
+    );
+  });
+
   it("calls getRecipeCards with the updated search string when search input changes", () => {
     const recipeUseCases = makeRecipeUseCases();
     render(

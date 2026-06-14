@@ -47,3 +47,7 @@ coverage
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Stryker
+/reports/
+.stryker-tmp/
