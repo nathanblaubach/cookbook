@@ -9,8 +9,7 @@
     "!src/**/*.fake.ts",
     "!src/test-setup.ts",
     "!src/vite-env.d.ts",
-    "!src/main.tsx",
-    "!src/pages/AboutPage.tsx"
+    "!src/main.tsx"
   ],
   "thresholds": {
     "high": 100,
