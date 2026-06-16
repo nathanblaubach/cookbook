@@ -7,6 +7,10 @@
     "prepare": "husky",
     "dev": "vite",
     "build": "tsc && vite build",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
@@ -14,10 +18,7 @@
     "e2e:install-browsers": "npx playwright install --with-deps",
     "e2e:test": "npx playwright test --reporter=list",
     "e2e:report": "npx playwright test",
-    "lint:check": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format:check": "prettier --check .",
-    "format:fix": "prettier --write ."
+    "verify": "npm run build && npm run lint:check && npm run format:check && npm run coverage && npm run mutation && npm run e2e:test"
   },
   "dependencies": {
     "react": "19.2.7",
