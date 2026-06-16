@@ -28,6 +28,7 @@
   "devDependencies": {
     "@axe-core/playwright": "4.11.3",
     "@eslint-react/eslint-plugin": "5.8.16",
+    "@eslint/compat": "2.1.0",
     "@eslint/js": "10.0.1",
     "@playwright/test": "1.60.0",
     "@stryker-mutator/core": "9.6.1",
