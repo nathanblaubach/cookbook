@@ -7,7 +7,6 @@
     "src/**/*.{ts,tsx}",
     "!src/**/*.test.{ts,tsx}",
     "!src/**/*.fake.ts",
-    "!src/test-setup.ts",
     "!src/vite-env.d.ts",
     "!src/main.tsx"
   ],
