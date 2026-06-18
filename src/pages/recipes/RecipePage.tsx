@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Page } from "../../components/Page/Page";
-import { Notecard, NotecardRow } from "../../components/Notecard/Notecard";
 import { Recipe } from "../../repositories/recipe.ts";
 import { RecipeRepository } from "../../repositories/recipe-repository.ts";
+import "./RecipePage.css";
 
 type RecipePageProps = {
   recipeRepository: RecipeRepository;
@@ -28,16 +28,46 @@ export function RecipePage({
     </Page>
   ) : (
     <Page>
-      <Notecard label={"Recipe Name"} text={recipe.name}>
-        <NotecardRow text={"Ingredients:"} isBold={true} />
+      <div className="notecard">
+        <div className="notecard-row notecard-row-title">
+          <h1
+            aria-label="Recipe Name"
+            className="notecard-text notecard-text-title"
+          >
+            {recipe.name}
+          </h1>
+        </div>
+
+        <div className="notecard-row notecard-row-border">
+          <p
+            className="notecard-text notecard-text-font"
+            style={{ fontWeight: "bold" }}
+          >
+            Ingredients:
+          </p>
+        </div>
+
         {recipe.ingredients.map((ingredient) => (
-          <NotecardRow key={ingredient} text={ingredient} />
+          <div key={ingredient} className="notecard-row notecard-row-border">
+            <p className="notecard-text notecard-text-font">{ingredient}</p>
+          </div>
         ))}
-        <NotecardRow text={"Instructions:"} isBold={true} />
+
+        <div className="notecard-row notecard-row-border">
+          <p
+            className="notecard-text notecard-text-font"
+            style={{ fontWeight: "bold" }}
+          >
+            Instructions:
+          </p>
+        </div>
+
         {recipe.instructions.map((instruction) => (
-          <NotecardRow key={instruction} text={instruction} />
+          <div key={instruction} className="notecard-row notecard-row-border">
+            <p className="notecard-text notecard-text-font">{instruction}</p>
+          </div>
         ))}
-      </Notecard>
+      </div>
     </Page>
   );
 }
