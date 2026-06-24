@@ -1,0 +1,23 @@
+name: Setup
+description: Checkout code, set up Node.js, install dependencies, and audit signatures
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # 7.0.0
+
+    - name: Use Node.js 24.x
+      uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # 6.4.0
+      with:
+        node-version: 24.x
+        cache: "npm"
+        cache-dependency-path: package-lock.json
+
+    - name: Install dependencies
+      run: npm ci --ignore-scripts
+      shell: bash
+
+    - name: Check signatures
+      run: npm audit signatures
+      shell: bash
