@@ -1,7 +1,7 @@
 # Combined Node.js CI and Firebase Hosting Deploy Workflow
 # Runs checks on both push and pull_request, deploys only on push to main after successful build
 
-name: Node.js CI & Firebase Deploy
+name: ci-cd
 
 on:
   push:
