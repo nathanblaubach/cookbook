@@ -3,10 +3,6 @@
   "extends": ["config:recommended"],
   "minimumReleaseAge": "7 days",
   "rangeStrategy": "pin",
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["at any time"]
-  },
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
