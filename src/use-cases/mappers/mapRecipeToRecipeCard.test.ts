@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
+import type { Recipe } from "../../repositories/recipe.ts";
 import { mapRecipeToRecipeCard } from "./mapRecipeToRecipeCard.ts";
-import { Recipe } from "../../repositories/recipe.ts";
 
 describe("mapRecipeToRecipeCard", () => {
   // Arrange

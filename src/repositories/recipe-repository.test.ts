@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { RecipeRepository } from "./recipe-repository.ts";
 import { FakeRecipeReader } from "../infrastructure/recipe-reader.fake.ts";
+import { RecipeRepository } from "./recipe-repository.ts";
 
 describe("RecipeRepository Tests", () => {
   const fakeRecipeReader = new FakeRecipeReader();
@@ -36,9 +36,9 @@ describe("RecipeRepository Tests", () => {
         );
 
         // Assert
-        recipes.forEach((recipe) =>
-          expect(categories).toContain(recipe.category),
-        );
+        recipes.forEach((recipe) => {
+          expect(categories).toContain(recipe.category);
+        });
       },
     );
 
@@ -97,12 +97,13 @@ describe("RecipeRepository Tests", () => {
       const recipe = recipeRepository.getRecipeById(recipeId);
 
       // Assert
-      expect(recipe).not.toBeUndefined();
-      expect(recipe!.id).toBe(recipeId);
-      expect(recipe!.name).toBe("Hot Chocolate");
-      expect(recipe!.category).toBe("Beverage");
-      expect(recipe!.ingredients).toEqual(["cocoa"]);
-      expect(recipe!.instructions).toEqual(["Heat milk", "Add cocoa", "Stir"]);
+      expect(recipe).toEqual({
+        id: recipeId,
+        name: "Hot Chocolate",
+        category: "Beverage",
+        ingredients: ["cocoa"],
+        instructions: ["Heat milk", "Add cocoa", "Stir"],
+      });
     });
 
     it("should not find recipe when it does not exist", () => {

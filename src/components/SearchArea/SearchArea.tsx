@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import filterImage from "../../assets/filter.svg";
 import "./SearchArea.css";
 
@@ -21,6 +22,7 @@ export function SearchArea({
     <div className="search-area">
       <div className="search-bar">
         <button
+          type="button"
           onClick={() => setShowFilters(!showFilters)}
           aria-label="Show Filter Area"
         >

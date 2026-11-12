@@ -40,11 +40,10 @@ npm run dev
 Run quality checks
 
 ```shell
-npm run lint:check   # Lint: eslint
-npm run format:check # Format: prettier
-npm run test         # Unit tests (continuous): vitest
-npm run coverage     # Unit tests with coverage: vitest
-npm run mutation     # Unit tests with mutation coverage: Stryker
+npm run lint:check # Lint, format, and import order: biome
+npm run test       # Unit tests (continuous): vitest
+npm run coverage   # Unit tests with coverage: vitest
+npm run mutation   # Unit tests with mutation coverage: Stryker
 npm run e2e:test     # End to End: playwright
 ```
 

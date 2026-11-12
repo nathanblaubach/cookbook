@@ -1,5 +1,5 @@
-import { Recipe } from "../../repositories/recipe.ts";
-import { RecipeCard } from "../../components/RecipeCardGrid/RecipeCardGrid.tsx";
+import type { RecipeCard } from "../../components/RecipeCardGrid/RecipeCardGrid.tsx";
+import type { Recipe } from "../../repositories/recipe.ts";
 
 export function mapRecipeToRecipeCard(
   recipe: Recipe,

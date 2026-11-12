@@ -1,5 +1,5 @@
-import { expect, Page, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { expect, type Page, test } from "@playwright/test";
 
 test.describe("a11y", () => {
   async function expectNoAccessibilityViolation(page: Page) {

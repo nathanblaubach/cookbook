@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { Page } from "../components/Page/Page";
 
 export function AboutPage(): React.JSX.Element {

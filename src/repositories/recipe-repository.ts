@@ -1,5 +1,5 @@
-import { RecipeReader } from "./recipe-reader.ts";
-import { Recipe } from "./recipe.ts";
+import type { Recipe } from "./recipe.ts";
+import type { RecipeReader } from "./recipe-reader.ts";
 
 export class RecipeRepository {
   constructor(private readonly recipeReader: RecipeReader) {}

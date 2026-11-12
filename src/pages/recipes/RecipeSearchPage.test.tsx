@@ -1,10 +1,10 @@
-import { describe, expect, it, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
+import { describe, expect, it, vi } from "vitest";
+import type { FilterItem } from "../../components/Filter/Filter";
+import type { RecipeCard } from "../../components/RecipeCardGrid/RecipeCardGrid";
+import type { RecipeUseCases } from "../../use-cases/recipe-use-cases";
 import { RecipeSearchPage } from "./RecipeSearchPage";
-import { RecipeUseCases } from "../../use-cases/recipe-use-cases";
-import { FilterItem } from "../../components/Filter/Filter";
-import { RecipeCard } from "../../components/RecipeCardGrid/RecipeCardGrid";
 
 function makeRecipeUseCases(
   recipeCards: RecipeCard[] = [],
