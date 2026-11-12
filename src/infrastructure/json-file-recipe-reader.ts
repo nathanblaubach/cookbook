@@ -1,6 +1,6 @@
 import recipes from "../assets/recipes.json";
-import { RecipeReader } from "../repositories/recipe-reader";
-import { Recipe } from "../repositories/recipe";
+import type { Recipe } from "../repositories/recipe";
+import type { RecipeReader } from "../repositories/recipe-reader";
 
 export class JsonFileRecipeReader implements RecipeReader {
   readRecipes(): Recipe[] {

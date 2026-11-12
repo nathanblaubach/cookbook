@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { RecipeUseCases } from "./recipe-use-cases.ts";
-import { FilterItem } from "../components/Filter/Filter.tsx";
+import type { FilterItem } from "../components/Filter/Filter.tsx";
 import { FakeRecipeReader } from "../infrastructure/recipe-reader.fake.ts";
 import { RecipeRepository } from "../repositories/recipe-repository.ts";
+import { RecipeUseCases } from "./recipe-use-cases.ts";
 
 describe("RecipeUseCases", () => {
   const fakeRecipeReader = new FakeRecipeReader();
@@ -113,8 +113,7 @@ describe("RecipeUseCases", () => {
       const chocolateIngredientRecipeCard = recipeCards.find(
         (recipeCard) => recipeCard.recipeId === chocolateIngredientRecipeId,
       );
-      expect(chocolateIngredientRecipeCard).not.toBeUndefined();
-      expect(chocolateIngredientRecipeCard!.relevantIngredients.length).toBe(0);
+      expect(chocolateIngredientRecipeCard?.relevantIngredients.length).toBe(0);
 
       // Assert: Recipes that have ingredient matches without name matches are not displayed
       const chocolateIngredientNonChocolateNameRecipeCard = recipeCards.find(
@@ -138,9 +137,8 @@ describe("RecipeUseCases", () => {
       const chocolateIngredientRecipeCard = recipeCards.find(
         (recipeCard) => recipeCard.recipeId === chocolateIngredientRecipeId,
       );
-      expect(chocolateIngredientRecipeCard).not.toBeUndefined();
       expect(
-        chocolateIngredientRecipeCard!.relevantIngredients.length,
+        chocolateIngredientRecipeCard?.relevantIngredients.length,
       ).greaterThan(0);
 
       // Assert: Recipes that have ingredient matches without name matches are displayed
@@ -166,7 +164,9 @@ describe("RecipeUseCases", () => {
       const filterItems = recipeUseCases.getCategoryFilterItems();
 
       // Assert
-      filterItems.forEach((item) => expect(item.checked).toBe(false));
+      filterItems.forEach((item) => {
+        expect(item.checked).toBe(false);
+      });
     });
   });
 });

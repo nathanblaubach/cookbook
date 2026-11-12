@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
+import type { FilterItem } from "../../components/Filter/Filter.tsx";
 import { getCheckedFilterItemIds } from "./getCheckedFilterItemIds.ts";
-import { FilterItem } from "../../components/Filter/Filter.tsx";
 
 describe("getCheckedFilterItemIds", () => {
   it("should contain the ids of all checked items", () => {

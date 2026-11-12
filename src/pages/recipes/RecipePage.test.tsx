@@ -1,9 +1,9 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import type { Recipe } from "../../repositories/recipe";
+import type { RecipeRepository } from "../../repositories/recipe-repository";
 import { RecipePage } from "./RecipePage";
-import { RecipeRepository } from "../../repositories/recipe-repository";
-import { Recipe } from "../../repositories/recipe";
 
 beforeEach(() => {
   vi.stubGlobal("scrollTo", vi.fn());

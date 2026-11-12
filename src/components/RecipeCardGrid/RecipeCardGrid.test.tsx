@@ -1,7 +1,7 @@
-import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { RecipeCardGrid, RecipeCard } from "./RecipeCardGrid";
+import { describe, expect, it } from "vitest";
+import { type RecipeCard, RecipeCardGrid } from "./RecipeCardGrid";
 
 const recipeCards: RecipeCard[] = [
   {

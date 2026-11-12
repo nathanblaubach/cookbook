@@ -1,9 +1,9 @@
-import { RecipeCard } from "../components/RecipeCardGrid/RecipeCardGrid.tsx";
-import { FilterItem } from "../components/Filter/Filter.tsx";
-import { mapRecipeToRecipeCard } from "./mappers/mapRecipeToRecipeCard.ts";
-import { mapCategoryToFilterItem } from "./mappers/mapCategoryToFilterItem.ts";
+import type { FilterItem } from "../components/Filter/Filter.tsx";
+import type { RecipeCard } from "../components/RecipeCardGrid/RecipeCardGrid.tsx";
+import type { RecipeRepository } from "../repositories/recipe-repository.ts";
 import { getCheckedFilterItemIds } from "./mappers/getCheckedFilterItemIds.ts";
-import { RecipeRepository } from "../repositories/recipe-repository.ts";
+import { mapCategoryToFilterItem } from "./mappers/mapCategoryToFilterItem.ts";
+import { mapRecipeToRecipeCard } from "./mappers/mapRecipeToRecipeCard.ts";
 
 export class RecipeUseCases {
   constructor(private readonly repository: RecipeRepository) {}

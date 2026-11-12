@@ -1,4 +1,4 @@
-import { Recipe } from "./recipe.ts";
+import type { Recipe } from "./recipe.ts";
 
 export interface RecipeReader {
   readRecipes(): Recipe[];

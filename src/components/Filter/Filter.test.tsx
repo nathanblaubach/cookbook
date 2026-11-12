@@ -1,6 +1,6 @@
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
-import { Filter, FilterItem } from "./Filter";
+import { Filter, type FilterItem } from "./Filter";
 
 describe("Filter", () => {
   const items: FilterItem[] = [

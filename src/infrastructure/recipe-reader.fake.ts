@@ -1,5 +1,5 @@
-import { RecipeReader } from "../repositories/recipe-reader";
-import { Recipe } from "../repositories/recipe";
+import type { Recipe } from "../repositories/recipe";
+import type { RecipeReader } from "../repositories/recipe-reader";
 
 export class FakeRecipeReader implements RecipeReader {
   readRecipes(): Recipe[] {

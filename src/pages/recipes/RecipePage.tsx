@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import type React from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Page } from "../../components/Page/Page";
-import { Recipe } from "../../repositories/recipe.ts";
-import { RecipeRepository } from "../../repositories/recipe-repository.ts";
+import type { Recipe } from "../../repositories/recipe.ts";
+import type { RecipeRepository } from "../../repositories/recipe-repository.ts";
 import "./RecipePage.css";
 
 type RecipePageProps = {
@@ -19,8 +20,8 @@ export function RecipePage({
     /* Stryker disable next-line ArrayDeclaration: any constant array here runs the effect once on mount, same as [] */ [],
   );
 
-  const recipeId: number = parseInt(useParams().id!, 10);
-  const recipe: Recipe | undefined = recipeRepository.getRecipeById(recipeId);
+  const { id } = useParams();
+  const recipe: Recipe | undefined = recipeRepository.getRecipeById(Number(id));
 
   return recipe === undefined ? (
     <Page>

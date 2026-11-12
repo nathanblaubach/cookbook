@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
+import { Filter, type FilterItem } from "../../components/Filter/Filter";
 import { Page } from "../../components/Page/Page";
-import { SearchArea } from "../../components/SearchArea/SearchArea";
-import { Filter, FilterItem } from "../../components/Filter/Filter";
 import { RecipeCardGrid } from "../../components/RecipeCardGrid/RecipeCardGrid.tsx";
-import { RecipeUseCases } from "../../use-cases/recipe-use-cases";
+import { SearchArea } from "../../components/SearchArea/SearchArea";
+import type { RecipeUseCases } from "../../use-cases/recipe-use-cases";
 
 type RecipeSearchPageProps = {
   recipeUseCases: RecipeUseCases;

@@ -18,11 +18,8 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - name: Lint code
+      - name: Lint and format code
         run: npm run lint:check
-
-      - name: Check code formatting
-        run: npm run format:check
 
       - name: Run tests
         run: npm run coverage

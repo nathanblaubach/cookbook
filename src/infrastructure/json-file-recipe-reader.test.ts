@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
+import type { Recipe } from "../repositories/recipe.ts";
 import { JsonFileRecipeReader } from "./json-file-recipe-reader.ts";
-import { Recipe } from "../repositories/recipe.ts";
 
 describe("JsonFileRecipeReader Tests", () => {
   it("should get json recipes out of the file", async (): Promise<void> => {
